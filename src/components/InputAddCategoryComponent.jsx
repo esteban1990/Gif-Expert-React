@@ -1,0 +1,41 @@
+import React, { useState } from 'react'
+
+export const InputAddCategoryComponent = ({onNewCategory}) => {
+    // console.log(onNewCategory)
+
+
+    const [inputValue,setInputValue] =  useState(" ")
+
+
+    const handleChangeInput = ({target}) => {
+        // console.log(e.target.value)
+        setInputValue(target.value)
+    }
+
+    const handleSubmitForm = (e) => {
+        e.preventDefault();
+        if(inputValue.trim().length <= 1) return;
+        //USAR JAVASCRIPT PARA ESTE CODIGO , ALMANCENAR EL VALOR EN UNA CONSTANTE 
+        onNewCategory(inputValue.trim());
+        // onSetCategories((cate)=>([inputValue,...cate]))
+        setInputValue("");
+        
+    }
+
+  return (
+    <>
+    <h3>IputAddCategoryComponent</h3>
+
+    <form onSubmit={handleSubmitForm}>
+    <input
+    type="text"
+    placeholder='ingresa una categoria para ver imagenes'
+    value={inputValue}
+    onChange={handleChangeInput}
+    />
+    </form>
+
+
+    </>
+  )
+}
