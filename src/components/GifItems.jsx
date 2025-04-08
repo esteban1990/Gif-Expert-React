@@ -1,14 +1,25 @@
 import React from 'react'
 
-export const GifItems = ({title,url,id}) => {
 
-    console.log("titulo:",title, "url:" ,url ,"id:",id)
+
+
+export const GifItems = (imgs) => {
+
+    // console.log("titulo:",title, "url:" ,url ,"id:",id);
+
 
   return (
-    <div className="card">
-      <img src={url} alt={title}/>
-      <p>{title}</p>
+    <>
+  {
+       <div class="container text-center">
+       <div class="row">
+         <div class="col-4">
+            <img src={imgs.url} alt={imgs.title}/>
+         </div>
+       </div>
+     </div>  
 
-    </div>
+}
+</>  
   )
 }

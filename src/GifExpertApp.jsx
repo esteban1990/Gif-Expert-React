@@ -5,7 +5,7 @@ import { GifGrid } from "./components/GifGrid"
 export const GifExpertApp = () => {
 
 
-    const [categories,setCategories] = useState(["one punch"])
+    const [categories,setCategories] = useState(["one punch"]);
 
     const addCategory = (newCategory) => {
         // console.log(newCategory)
