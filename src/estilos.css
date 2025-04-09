@@ -1,0 +1,16 @@
+body {
+    padding:30px;
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas */
+    gap: 20px; /* Espacio entre las celdas */
+    padding: 10px;
+  }
+
+
+  .card {
+    margin-top: 10px;
+   
+  } 
