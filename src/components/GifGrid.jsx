@@ -26,6 +26,7 @@ export const GifGrid = ({category}) => {
           return (
             <GifItems key={imgs.id}
             {...imgs}
+            
 
             
             
