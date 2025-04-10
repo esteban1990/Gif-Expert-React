@@ -14,9 +14,13 @@ export const InputAddCategoryComponent = ({onNewCategory}) => {
 
     const handleSubmitForm = (e) => {
         e.preventDefault();
-        if(inputValue.trim().length <= 1) return;
+        const valor = inputValue
+        if(valor.trim().length <= 1) return;
         //USAR JAVASCRIPT PARA ESTE CODIGO , ALMANCENAR EL VALOR EN UNA CONSTANTE 
-        onNewCategory(inputValue.trim());
+
+        onNewCategory(valor.trim());
+        
+       
         // onSetCategories((cate)=>([inputValue,...cate]))
         setInputValue("");
         

@@ -9,11 +9,9 @@ export const GifExpertApp = () => {
     const [categories,setCategories] = useState(["one punch"]);
 
     const addCategory = (newCategory) => {
-        // console.log(newCategory)
-        if(categories.includes(newCategory)) return
         //VALIDAR CON BUEN JAVASCRIPT SI YA EXISTE LA MSIMA CATEGORIA AL MOMENTO DE DARLE SUBMIT AL INPUT 
-        setCategories((cate) => [newCategory,...cate]);
-        // setCategories(["valorant", ...categories])
+        // setCategories((cate) => [newCategory,...cate]);
+        setCategories([...categories, newCategory])
     }
   return (
     <>
