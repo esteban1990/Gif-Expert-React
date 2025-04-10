@@ -1,6 +1,18 @@
+import { useState } from "react";
+import { ButtonDeleteGif } from "./ButtonDeleteGif"
 
 
 export const GifItems = (images) => {
+  const [objetos,setObjetos] = useState([images]);
+  console.log(objetos);
+
+  const eliminarPorId = (id) => {
+    const nuevasImagenes = objetos.filter(item => item.id !== id);
+    setObjetos(nuevasImagenes);
+  };
+
+
+
   // console.log(imgs)
 
     // console.log("titulo:",title, "url:" ,url ,"id:",id);
@@ -11,9 +23,17 @@ export const GifItems = (images) => {
       <div className="row">
       <div className="col-6">
        <div className="card">
-        <img src={images.url} className="card-img-top"/>   
-        <p>{images.title}</p>
-        <button class="btn btn-danger">Delete Image</button>
+       {
+        objetos.map((img) => {
+          return(
+            <div key={img.id}>
+              <img src={img.url}/>
+              <p>{img.title}</p>
+              <button onClick={() => eliminarPorId(img.id)} class="btn btn-danger">Deelete image</button>
+            </div>
+          )
+        })
+       }
         </div>
       </div>
      
